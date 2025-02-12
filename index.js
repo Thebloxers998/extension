@@ -188,246 +188,260 @@ SOFTWARE.
                 color2: "#FF7473",
                 color3: "#A13332",
                 blocks: [
-                    {
-                        opcode: 'set_ugi',
-                        blockType: 'command',
-                        text: 'Set [UGI] as this project\'s Unique Game ID (UGI)',
-                        arguments: {
-                            UGI: {
-                                type: 'string',
-                                defaultValue: '01HNPHRWS0N0AYMM5K4HN31V4W',
-                            },
-                        }
-                    },
-                    {
-                        opcode: 'build_server_url',
-                        blockType: 'reporter',
-                        text: 'Signaling Server URL with set UGI',
-                    },
-                    "---",
-                    {
-                        opcode: 'change_api_url',
-                        blockType: 'command',
-                        text: 'Use [URL] as API Server',
-                        arguments: {
-                            URL: {
-                                type: 'string',
-                                defaultValue: 'https://omega.mikedev101.cc',
-                            },
-                        }
-                    },
-                    {
-                        opcode: 'change_wss_url',
-                        blockType: 'command',
-                        text: 'Use [URL] as Signaling Server',
-                        arguments: {
-                            URL: {
-                                type: 'string',
-                                defaultValue: 'wss://omega.mikedev101.cc',
-                            },
-                        }
-                    },
-                    "---",
-                    {
-                        opcode: 'get_token',
-                        blockType: 'reporter',
-                        text: 'Session Token',
-                    },
-                    {
-                        opcode: 'login_status_code',
-                        blockType: 'reporter',
-                        text: 'Login status code',
-                    },
-                    {
-                        opcode: 'was_login_successful',
-                        blockType: 'Boolean',
-                        text: 'Was login successful?',
-                    },
-                    {
-                        opcode: 'login_account',
-                        blockType: 'command',
-                        text: 'Login with email: [EMAIL] password: [PASSWORD]',
-                        arguments: {
-                            EMAIL: {
-                                type: 'string',
-                                defaultValue: '',
-                            },
-                            PASSWORD: {
-                                type: 'string',
-                                defaultValue: '',
-                            }
-                        }
-                    },
-                    "---",
-                    {
-                        opcode: 'register_status_code',
-                        blockType: 'reporter',
-                        text: 'Registration status code',
-                    },
-                    {
-                        opcode: 'was_register_successful',
-                        blockType: 'Boolean',
-                        text: 'Was registration successful?',
-                    },
-                    {
-                        opcode: 'register_account',
-                        blockType: 'command',
-                        text: 'Register with email: [EMAIL] username: [USERNAME] password: [PASSWORD]',
-                        arguments: {
-                            EMAIL: {
-                                type: 'string',
-                                defaultValue: '',
-                            },
-                            USERNAME: {
-                                type: 'string',
-                                defaultValue: '',
-                            },
-                            PASSWORD: {
-                                type: 'string',
-                                defaultValue: '',
-                            }
-                        }
-                    },
-                    "---",
-                    {
-                        opcode: 'save_status_code',
-                        blockType: 'reporter',
-                        text: 'Save status code',
-                    },
-                    {
-                        opcode: 'was_save_successful',
-                        blockType: 'Boolean',
-                        text: 'Was save successful?',
-                    },
-                    {
-                        opcode: 'save_slot',
-                        blockType: 'command',
-                        text: 'Write to save slot [SLOT] with [DATA]',
-                        arguments: {
-                            SLOT: {
-                                type: 'number',
-                                defaultValue: "1",
-                                menu: "SlotMenu",
-                            },
-                            DATA: {
-                                type: 'string',
-                                defaultValue: 'something to save',
-                            },
-                        }
-                    },
-                    "---",
-                    {
-                        opcode: 'load_status_code',
-                        blockType: 'reporter',
-                        text: 'Load status code',
-                    },
-                    {
-                        opcode: 'was_load_successful',
-                        blockType: 'Boolean',
-                        text: 'Was load successful?',
-                    },
-                    {
-                        opcode: 'loaded_slot_data',
-                        blockType: 'reporter',
-                        text: 'Loaded save data',
-                    },
-                    {
-                        opcode: 'load_slot',
-                        blockType: 'command',
-                        text: 'Read from save slot [SLOT]',
-                        arguments: {
-                            SLOT: {
-                                type: 'number',
-                                defaultValue: "1",
-                                menu: "SlotMenu",
-                            },
-                        }
-                    },
-                ],
-                menus: {
-                    SlotMenu: {
-                        acceptReporters: true,
-                        items: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-                    }
-                }
-            };
+    {
+        opcode: 'set_ugi',
+        blockType: 'command',
+        text: 'Set Unique Game ID (UGI) to [UGI]',
+        arguments: {
+            UGI: {
+                type: 'string',
+                defaultValue: '01HNPHRWS0N0AYMM5K4HN31V4W',
+            },
         }
+    },
+    {
+        opcode: 'build_server_url',
+        blockType: 'reporter',
+        text: 'Generate Signaling Server URL with UGI',
+    },
+    "---",
+    {
+        opcode: 'change_api_url',
+        blockType: 'command',
+        text: 'Set API Server to [URL]',
+        arguments: {
+            URL: {
+                type: 'string',
+                defaultValue: 'https://omega.mikedev101.cc',
+            },
+        }
+    },
+    {
+        opcode: 'change_wss_url',
+        blockType: 'command',
+        text: 'Set Signaling Server to [URL]',
+        arguments: {
+            URL: {
+                type: 'string',
+                defaultValue: 'wss://omega.mikedev101.cc',
+            },
+        }
+    },
+    "---",
+    {
+        opcode: 'get_token',
+        blockType: 'reporter',
+        text: 'Retrieve Session Token',
+    },
+    {
+        opcode: 'login_status_code',
+        blockType: 'reporter',
+        text: 'Get Login Status Code',
+    },
+    {
+        opcode: 'was_login_successful',
+        blockType: 'Boolean',
+        text: 'Was Login Successful?',
+    },
+    {
+        opcode: 'login_account',
+        blockType: 'command',
+        text: 'Login with Email: [EMAIL] and Password: [PASSWORD]',
+        arguments: {
+            EMAIL: {
+                type: 'string',
+                defaultValue: '',
+            },
+            PASSWORD: {
+                type: 'string',
+                defaultValue: '',
+            }
+        }
+    },
+    {
+        opcode: 'clomega_whenloggedin',
+        blockType: 'hat',
+        text: 'When user logs in',
+    },
+    "---",
+    {
+        opcode: 'register_status_code',
+        blockType: 'reporter',
+        text: 'Get Registration Status Code',
+    },
+    {
+        opcode: 'was_register_successful',
+        blockType: 'Boolean',
+        text: 'Was Registration Successful?',
+    },
+    {
+        opcode: 'register_account',
+        blockType: 'command',
+        text: 'Register with Email: [EMAIL], Username: [USERNAME], and Password: [PASSWORD]',
+        arguments: {
+            EMAIL: {
+                type: 'string',
+                defaultValue: '',
+            },
+            USERNAME: {
+                type: 'string',
+                defaultValue: '',
+            },
+            PASSWORD: {
+                type: 'string',
+                defaultValue: '',
+            }
+        }
+    },
+    {
+        opcode: 'clomega_whenregistered',
+        blockType: 'hat',
+        text: 'When user registers',
+    },
+    "---",
+    {
+        opcode: 'save_status_code',
+        blockType: 'reporter',
+        text: 'Get Save Status Code',
+    },
+    {
+        opcode: 'was_save_successful',
+        blockType: 'Boolean',
+        text: 'Was Save Successful?',
+    },
+    {
+        opcode: 'save_slot',
+        blockType: 'command',
+        text: 'Save Data to Slot [SLOT] with [DATA]',
+        arguments: {
+            SLOT: {
+                type: 'number',
+                defaultValue: "1",
+                menu: "SlotMenu",
+            },
+            DATA: {
+                type: 'string',
+                defaultValue: 'something to save',
+            },
+        }
+    },
+    "---",
+    {
+        opcode: 'load_status_code',
+        blockType: 'reporter',
+        text: 'Get Load Status Code',
+    },
+    {
+        opcode: 'was_load_successful',
+        blockType: 'Boolean',
+        text: 'Was Load Successful?',
+    },
+    {
+        opcode: 'loaded_slot_data',
+        blockType: 'reporter',
+        text: 'Get Loaded Slot Data',
+    },
+    {
+        opcode: 'load_slot',
+        blockType: 'command',
+        text: 'Load Data from Slot [SLOT]',
+        arguments: {
+            SLOT: {
+                type: 'number',
+                defaultValue: "1",
+                menu: "SlotMenu",
+            },
+        }
+    },
+],
+menus: {
+    SlotMenu: {
+        acceptReporters: true,
+        items: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+}
+    };
+        }
+        
+change_api_url({ URL }) {
+    OmegaAuthInstance.rootApiURL = URL;
+}
 
-        change_api_url({ URL }) {
-            OmegaAuthInstance.rootApiURL = URL;
-        }
+change_wss_url({ URL }) {
+    OmegaAuthInstance.rootWsURL = URL;
+}
 
-        change_wss_url({ URL }) {
-            OmegaAuthInstance.rootWsURL = URL;
-        }
-
-        async login_account({ EMAIL, PASSWORD }) {
-            await OmegaAuthInstance.Login(EMAIL, PASSWORD);
-        }
-
-        register_status_code() {
-            return OmegaAuthInstance.statusCodes.register;
-        }
-
-        login_status_code() {
-            return OmegaAuthInstance.statusCodes.login;
-        }
-
-        save_status_code() {
-            return OmegaAuthInstance.statusCodes.save;
-        }
-
-        load_status_code() {
-            return OmegaAuthInstance.statusCodes.load;
-        }
-
-        was_save_successful() {
-            return OmegaAuthInstance.saveSuccess;
-        }
-
-        async save_slot({ SLOT, DATA }) {
-            await OmegaAuthInstance.Save(SLOT, DATA);
-        }
-
-        was_load_successful() {
-            return OmegaAuthInstance.loadSuccess;
-        }
-
-        loaded_slot_data() {
-            return OmegaAuthInstance.loadedData;
-        }
-
-        async load_slot({ SLOT }) {
-            await OmegaAuthInstance.Load(SLOT);
-        }
-
-        was_login_successful() {
-            return OmegaAuthInstance.loginSuccess;
-        }
-
-        async register_account({ EMAIL, USERNAME, PASSWORD }) {
-            await OmegaAuthInstance.Register(EMAIL, USERNAME, PASSWORD);
-            return OmegaAuthInstance.registerSuccess;
-        }
-
-        was_register_successful() {
-            return OmegaAuthInstance.registerSuccess;
-        }
-
-        get_token() {
-            return OmegaAuthInstance.sessionToken;
-        }
-
-        build_server_url() {
-            let url = new URL(`${OmegaAuthInstance.rootWsURL}/api/v0/signaling`);
-            url.searchParams.append('ugi', OmegaAuthInstance.selectedUgi);
-            return url.toString();
-        }
-
-        set_ugi({UGI}) {
-            OmegaAuthInstance.selectedUgi = UGI;
-        }
+async login_account({ EMAIL, PASSWORD }) {
+    await OmegaAuthInstance.Login(EMAIL, PASSWORD);
+    if (OmegaAuthInstance.loginSuccess) {
+        Scratch.vm.runtime.startHats('clomega_whenloggedin');
     }
+}
+
+register_status_code() {
+    return OmegaAuthInstance.statusCodes.register;
+}
+
+login_status_code() {
+    return OmegaAuthInstance.statusCodes.login;
+}
+
+save_status_code() {
+    return OmegaAuthInstance.statusCodes.save;
+}
+
+load_status_code() {
+    return OmegaAuthInstance.statusCodes.load;
+}
+
+was_save_successful() {
+    return OmegaAuthInstance.saveSuccess;
+}
+
+async save_slot({ SLOT, DATA }) {
+    await OmegaAuthInstance.Save(SLOT, DATA);
+}
+
+was_load_successful() {
+    return OmegaAuthInstance.loadSuccess;
+}
+
+loaded_slot_data() {
+    return OmegaAuthInstance.loadedData;
+}
+
+async load_slot({ SLOT }) {
+    await OmegaAuthInstance.Load(SLOT);
+}
+
+was_login_successful() {
+    return OmegaAuthInstance.loginSuccess;
+}
+
+async register_account({ EMAIL, USERNAME, PASSWORD }) {
+    await OmegaAuthInstance.Register(EMAIL, USERNAME, PASSWORD);
+    if (OmegaAuthInstance.registerSuccess) {
+        Scratch.vm.runtime.startHats('clomega_whenregistered');
+    }
+    return OmegaAuthInstance.registerSuccess;
+}
+
+was_register_successful() {
+    return OmegaAuthInstance.registerSuccess;
+}
+
+get_token() {
+    return OmegaAuthInstance.sessionToken;
+}
+
+build_server_url() {
+    let url = new URL(`${OmegaAuthInstance.rootWsURL}/api/v0/signaling`);
+    url.searchParams.append('ugi', OmegaAuthInstance.selectedUgi);
+    return url.toString();
+}
+
+set_ugi({ UGI }) {
+    OmegaAuthInstance.selectedUgi = UGI;
+}
 
     Scratch.extensions.register(new CloudLinkOmega(Scratch));
 })(Scratch);
