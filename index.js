@@ -202,7 +202,7 @@ SOFTWARE.
     {
         opcode: 'build_server_url',
         blockType: 'reporter',
-        text: 'Generate Signaling Server URL with UGI',
+        text: 'Signaling Server URL with UGI',
     },
     "---",
     {
@@ -246,7 +246,7 @@ SOFTWARE.
     {
         opcode: 'login_account',
         blockType: 'command',
-        text: 'Login with Email: [EMAIL] and Password: [PASSWORD]',
+        text: 'Login to Account with Email: [EMAIL] and Password: [PASSWORD]',
         arguments: {
             EMAIL: {
                 type: 'string',
@@ -277,7 +277,7 @@ SOFTWARE.
     {
         opcode: 'register_account',
         blockType: 'command',
-        text: 'Register with Email: [EMAIL], Username: [USERNAME], and Password: [PASSWORD]',
+        text: 'Register Account with Email: [EMAIL], Username: [USERNAME], and Password: [PASSWORD]',
         arguments: {
             EMAIL: {
                 type: 'string',
@@ -351,7 +351,7 @@ SOFTWARE.
                 defaultValue: "1",
                 menu: "SlotMenu",
             },
-        }
+        },
     },
 ],
 menus: {
@@ -373,7 +373,7 @@ change_wss_url({ URL }) {
 async login_account({ EMAIL, PASSWORD }) {
     await OmegaAuthInstance.Login(EMAIL, PASSWORD);
     if (OmegaAuthInstance.loginSuccess) {
-        Scratch.vm.runtime.startHats('clomega_whenloggedin');
+        this.runtime.startHats('clomega_whenloggedin');
     }
 }
 
@@ -420,7 +420,7 @@ was_login_successful() {
 async register_account({ EMAIL, USERNAME, PASSWORD }) {
     await OmegaAuthInstance.Register(EMAIL, USERNAME, PASSWORD);
     if (OmegaAuthInstance.registerSuccess) {
-        Scratch.vm.runtime.startHats('clomega_whenregistered');
+        this.runtime.startHats('clomega_whenregistered');
     }
     return OmegaAuthInstance.registerSuccess;
 }
