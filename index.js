@@ -190,7 +190,7 @@ SOFTWARE.
                 blocks: [
     {
         opcode: 'set_ugi',
-        blockType: 'command',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Set Unique Game ID (UGI) to [UGI]',
         arguments: {
             UGI: {
@@ -201,13 +201,13 @@ SOFTWARE.
     },
     {
         opcode: 'build_server_url',
-        blockType: 'reporter',
+        blockType: Scratch.BlockType.REPORTER,
         text: 'Signaling Server URL with UGI',
     },
     "---",
     {
         opcode: 'change_api_url',
-        blockType: 'command',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Set API Server to [URL]',
         arguments: {
             URL: {
@@ -218,7 +218,7 @@ SOFTWARE.
     },
     {
         opcode: 'change_wss_url',
-        blockType: 'command',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Set Signaling Server to [URL]',
         arguments: {
             URL: {
@@ -230,22 +230,22 @@ SOFTWARE.
     "---",
     {
         opcode: 'get_token',
-        blockType: 'reporter',
-        text: 'Retrieve Session Token',
+        blockType: Scratch.BlockType.COMMAND,
+        text: 'Your Session Token',
     },
     {
         opcode: 'login_status_code',
-        blockType: 'reporter',
+        blockType: Scratch.BlockType.REPORTER,
         text: 'Get Login Status Code',
     },
     {
         opcode: 'was_login_successful',
-        blockType: 'Boolean',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Was Login Successful?',
     },
     {
         opcode: 'login_account',
-        blockType: 'command',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Login to Account with Email: [EMAIL] and Password: [PASSWORD]',
         arguments: {
             EMAIL: {
@@ -260,58 +260,58 @@ SOFTWARE.
     },
     {
         opcode: 'clomega_whenloggedin',
-        blockType: 'hat',
+        blockType: Scratch.BlockType.HAT,
         text: 'When user logs in',
     },
     "---",
     {
         opcode: 'register_status_code',
-        blockType: 'reporter',
+        blockType: Scratch.BlockType.REPORTER,
         text: 'Get Registration Status Code',
     },
     {
         opcode: 'was_register_successful',
-        blockType: 'Boolean',
+        blockType: Scratch.BlockType.BOOLEAN,
         text: 'Was Registration Successful?',
     },
     {
         opcode: 'register_account',
-        blockType: 'command',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Register Account with Email: [EMAIL], Username: [USERNAME], and Password: [PASSWORD]',
         arguments: {
             EMAIL: {
-                type: 'string',
+                type: Scratch.ArgumentType.STRING,
                 defaultValue: '',
             },
             USERNAME: {
-                type: 'string',
+                type: Scratch.ArgumentType.STRING,
                 defaultValue: '',
             },
             PASSWORD: {
-                type: 'string',
+                type: Scratch.ArgumentType.STRING,
                 defaultValue: '',
             }
         }
     },
     {
         opcode: 'clomega_whenregistered',
-        blockType: 'hat',
+        blockType: Scratch.BlockType.HAT,
         text: 'When user registers',
     },
     "---",
     {
         opcode: 'save_status_code',
-        blockType: 'reporter',
+        blockType: Scratch.BlockType.REPORTER,
         text: 'Get Save Status Code',
     },
     {
         opcode: 'was_save_successful',
-        blockType: 'Boolean',
+        blockType: Scratch.BlockType.REPORTER,
         text: 'Was Save Successful?',
     },
     {
         opcode: 'save_slot',
-        blockType: 'command',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Save Data to Slot [SLOT] with [DATA]',
         arguments: {
             SLOT: {
@@ -328,22 +328,22 @@ SOFTWARE.
     "---",
     {
         opcode: 'load_status_code',
-        blockType: 'reporter',
+        blockType: Scratch.BlockType.REPORTER,
         text: 'Get Load Status Code',
     },
     {
         opcode: 'was_load_successful',
-        blockType: 'Boolean',
+        blockType: Scratch.BlockType.BOOLEAN,
         text: 'Was Load Successful?',
     },
     {
         opcode: 'loaded_slot_data',
-        blockType: 'reporter',
+        blockType: Scratch.BlockType.REPORTER,
         text: 'Get Loaded Slot Data',
     },
     {
         opcode: 'load_slot',
-        blockType: 'command',
+        blockType: Scratch.BlockType.COMMAND,
         text: 'Load Data from Slot [SLOT]',
         arguments: {
             SLOT: {
